@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            Team SF
+        </title>
+        <style>
+            h1{
+                font-family: "sans-serif"
+            }
+
+            body{
+                margin-left: 3%;
+                background-color: aqua;
+            }
+
+            div{
+                margin-bottom: 10px;
+            }
+            ul{
+                background-color: rgb(175, 175, 236);
+                overflow: hidden;
+                list-style-type:none;
+                margin:0;
+                padding:0;
+                position: sticky;
+                position: -webkit-sticky;
+                padding: 10px 10px 0px 10px;
+                width: 90%;
+                top:0;
+            }
+
+            li{
+                float:left;
+
+            }
+
+            li a{
+                display: block;
+                padding: 14px 16px;
+                color: white;
+                text-decoration:none;
+            }
+
+            .active{
+                background-color:green;
+                color: blue;
+            }
+
+            li a:hover:not(.active){
+                background-color:indianred;
+            }
+            .footer {
+                position: fixed;
+                padding: 10px 10px 0px 10px;
+                bottom: 0;
+                width: 90%;
+                /* Height of the footer*/ 
+                height: 40px;
+                background:teal;
+            }   
+            #divLinks{
+                position: relative;
+                left:15px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src='images/teamsf07logo.gif'/>
+
+
+        <ul>
+            <li><a href='./'>Home</a> </li>
+            <li><a href='aboutus.html'>About Us</a> </li>
+            <li><a href='contactus.html'>Contact Us</a></li>
+            <li><a href='signup.html'>Sign Up</a> </li>
+            <li><a href='clubs.html'>Sporting Groups</a> </li>
+
+        </ul>
+
+        <h2>My favorites sites:</h2>
+        <div class='container' id='divProducts'>
+            <div class="flex_row">
+
+                <a href='http://google.com' target="new">Google</a>
+            </div>
+            <div class="flex_row"></div>
+            <a href='http://amazon.com' target="new">Amazon</a>
+        </div>
+
+        <footer class="footer">(C) 2021 Team SF</footer>
+    </body>
+</html>

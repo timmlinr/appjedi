@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            Team SF
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <style>
+
+            h1{
+                font-family: "sans-serif"
+            }
+
+            body{
+                margin: 2;
+                background-color: aqua;
+            }
+
+            div{
+                margin-bottom: 10px;
+            }
+            ul{
+                background-color: rgb(175, 175, 236);
+                overflow: hidden;
+                list-style-type:none;
+                margin:0;
+                padding:0;
+                position: sticky;
+                position: -webkit-sticky;
+                width: 100%;
+                top:0;
+            }
+
+            li{
+                float:left;
+
+            }
+
+            li a{
+                display: block;
+                padding: 14px 16px;
+                color: white;
+                text-decoration:none;
+            }
+
+            .active{
+                background-color:green;
+                color: blue;
+            }
+
+            li a:hover:not(.active){
+                background-color:indianred;
+            }
+            .footer {
+                position: fixed;
+                padding: 10px 10px 0px 10px;
+                bottom: 0;
+                width: 100%;
+                /* Height of the footer*/ 
+                height: 40px;
+                background:teal;
+            }   
+            form{
+                margin-left:25%;
+                margin-top:5%;
+            }
+            #divAddress{
+                margin-left:30%;
+            }
+        </style>
+        <script>
+            const quizAnswer = 11;
+            function signup()
+            {
+                const pg = "saveSignup.php";
+                const data =  {
+                            fullname: $("#fullName").val(),
+                            email: $("#email").val(),
+                            birthdate: $("#birthdate").val(),
+                            
+                            contactId: 1,
+                            token: "TeamSF2HK22!"
+                        };
+             //alert(JSON.stringify (data));
+                $.post(pg,
+                        data
+                       ,
+                        function (msg)
+                        {
+                            alert(msg);
+                            hideAll();
+
+                        });
+            }
+        </script>
+    </head>
+    <body>
+
+        <h1><img src='images/teamsf07logo.gif'/> &nbsp;Join Us</h1>
+        <span>
+            <ul>
+                <li><a href='./'>Home</a> </li>
+                <li><a href='aboutus.html'>About Us</a> </li>
+                <li><a href='contactus.html'>Contact Us</a></li>
+                <li><a href='clubs.html'>Sporting Groups</a> </li>
+                <li><a href='links.html'>Links</a> </li>
+            </ul>
+        </span>
+
+        <form>
+            <h3>Please enter your contact information below:</h3>
+            <h3>Your full name:<br/>
+                <input type='text' name='fullName' id="fullName" size="40" placeholder="Your Full Name"/></h3>
+            <h3>Your Email Address:<br/><input type='text' name='email' id='email' size="60" placeholder="Your Email Address"/></h3>
+
+            <h3>Your Birthdate:<br/><input type='text' name='birthdate' id='birthdate' size="20" placeholder="Your Birthdate"/></h3>
+            <h3>Are you human: <span id='humanQuiz'>6 + 5 = ? </span><input type='text' name='quizAnswer' id='quizAnswer' size="10" placeholder="Answer this question"/></h3>
+
+            <p><input type='button' value='Submit' onClick='signup()'/></p>
+        </form>
+        <hr/>
+        <div id='divAddress'>
+            <h3>Email: snowdenreggie@gmail.com </h3>
+            <h3><a href="https://www.facebook.com/TeamSanFrancisco" target="news"><img src='images/facebook.png' width=150 height=50></a></h3>
+        </div>
+        <footer class="footer">(c) 2021 Team SF</footer>
+    </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Wado Ki Kai - Contact Us</title>
+
+
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+        <meta name="author" content="Tee G. Peng (www.lotusseeds.com)" />
+
+        <meta name="description" content="Wado Ki Kai Karate, Alameda, California" />
+
+        <meta name="keywords" content="Karate, Wadokikai, Wado Ki Kai, to learn from all things" />
+
+        <meta name="Copyright" content="Copyright (c) 2005 wadokikai.com" />
+
+        <meta name="robots" content="all" />
+
+        <!-- compliance patch for microsoft browsers --><!--[if lt IE 7]><script src="/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
+        <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
+
+        <link href="index.css" rel="stylesheet" type="text/css" />
+
+        <style>
+            .left {width: 106px; text-align: right; padding-right: 3px; }
+
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function sendMessage()
+            {
+                var form = document.getElementById('formData');
+                var formData = new FormData(form);
+                console.log(formData);
+                const data = {
+                    realname: $("#realname").val(), 
+                    email: $("#email").val(), 
+                    phone: $("#phone").val(), 
+                    dojoId: $("#dojoId").val(), 
+                    student: $("#student").prop("checked")?"Yes":"No" ,
+                    add2list: $("#add2list").prop("checked")?"Yes":"No" ,
+                    message: $("#message").val() 
+                    }
+                alert(JSON.stringify(data));
+               // alert( $("#student").prop("checked")?"Yes":"No");
+                $.post('contact2020.php',data,
+                   function (data) {
+                        alert(data);
+                    }
+                );
+         
+            }
+        </script>
+    </head>
+    <body>
+
+        <!-- starts container and its child elements >> relative position -->
+        <div id="container"><a name="top"></a>
+            <div id="pageHeader">
+                <h2></h2>
+
+                <!-- for transparent Dragon image -->
+                <h3><span>Wado Ki Kai Karate Do - To Learn From All Things</span></h3>
+
+            </div>
+
+            <div id="quickSummary">
+                <h3>Contact Wado Ki Kai</h3>
+
+            </div>
+
+            <div id="preamble">
+                <p>If you would like more information about Wado Ki Kai or would
+                    just like to make some comments about this site, please submit your
+                    request below. </p>
+                <P> Fields with "*" are required!!!!</p>
+
+            </div>
+
+            <div id="supportingText"><!-- Form element -->
+                <div class="formWrapper">
+                    <form id='formData' method="post" action="contact.php">
+                        <div> <input name="mail_options" value="CharSet=utf-8" type="hidden" /> <input name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" type="hidden" /> <input name="recipients" value="arcedo_*_yahoo.com" type="hidden" /> <input name="required" value="email:Your email,realname:Your name,message:Your message" type="hidden" /> <input name="subject" value="Contact Form Submitted to Wado Ki Kai" type="hidden" />
+                            <input type="hidden" name="good_url" value="http://www.wadokikai.com/confirmation.html" /></div>
+
+                        <div class="form">
+                            <label class="left">Name *</label>
+                            <label class="input"><input name="realname"  id="realname" alt="name" type="text" /> </label> 
+                            <label class="left">Email *</label> <label class="input"><input name="email" id="email" alt="email" type="text" /> </label>
+                            <label class="left">Phone </label> <label class="input"><input name="phone" id="phone" alt="phone" type="text" /> </label> 
+                            <label class="left">Location
+                            </label> 
+                            <label class="input">
+                                <select name='dojoId' id='dojoId'>
+                                    <option value='None'>***Select a location (dojo) ***</option>
+                                    <option value='1'>Alameda (MSAC)</option>
+                                    <option value='3'>Orinda</option>          
+                                    <option value='2'>Harbor Bay</option>          
+                                    <option value='4'>Corpuz</option>          
+                                    <option value='5'>Earhart</option>          
+                                    <option value='6'>Mission</option>          
+                                    <option value='7'>Marin</option>          
+                                    <option value='8'>San Francisco (Hayes Valley)</option>          
+                                </select>
+                            </label>
+
+                            <label class="left"></label> 
+                            <label class="input">
+                                <input type='checkbox' name='student'  id='student' value="1"/> I am a student
+                            </label>
+
+                            <label class="left"></label> 
+                            <label class="input">
+                                <input type='checkbox' name='add2list'  id='add2list'/> Add me to email list
+                            </label>
+
+                            <label class="left">Your message *</label> <label class="textarea">
+                                <textarea name="message"  id="message" rows="10" cols="22"></textarea>
+                            </label> <label class="send"><input name="Send" onclick="sendMessage()" value="Send" type="button" /></label>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <!-- Form element ended--> </div>
+
+            <!-- starts books and promotional section - left column -->
+            <div id="leftColWrapper">
+                <div class="roundshape"></div>
+
+                <!-- for buy this book on amazon.com. DO NOT delete -->
+                <div class="books"><img src="images/karatebook.jpg" alt="Karate's Supreme Ultimate" height="100" width="66" />
+                    <p><a href="http://www.amazon.com/exec/obidos/ASIN/0595307477/wadokikaikara-20" title="rigth click to open a new window for this link">Karate's
+                            Supreme Ultimate <span><br />
+
+                                by Ferol Arce &amp; Patrick McDermott </span></a></p>
+
+                </div>
+
+            </div>
+
+            <!-- starts navigation items >>absolute position // IMPORTANT!!!, do not change anything in this section -->
+            <div id="menu">
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="overview.html">Karate Overview</a></li>
+
+                    <li><a href="dojoprocedures.html">Dojo Procedures</a></li>
+
+                    <li><a href="style.html">Wado Ki Kai Style</a></li>
+
+                    <li><a href="katas.html">Katas</a></li>
+
+                    <li><a href="events.html">Events</a></li>
+
+                    <li><a href="terminology.html">Terminology</a></li>
+
+                    <li><a href="instructors.html">Instructors</a></li>
+
+                    <li><a href="schoolsandschedules.html">Schools
+                            &amp; Schedules</a></li>
+
+                    <li id="active"><a href="#">Contact</a></li>
+
+                    <li><a href="http://wadokikai.com/list/?p=subscribe" title="subscribe to Email List">Email List</a></li>
+                    <li> <a href="http://www.wadokikai.com/photo/index.php">Photo Gallery</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- ends navigation items >>absolute position -->
+            <div class="goTop"><a href="#top"><img src="images/arrow.gif" alt="jump to top" class="img" height="34" width="34" /></a></div>
+
+            <div id="footerLink">
+                <h2></h2>
+
+                <!-- for transparent tiger image -->
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                    <li><a href="overview.html">Karate Overview</a></li>
+
+                    <li><a href="style.html">Wado Ki Kai Style</a></li>
+
+                    <li><a href="dojoprocedures.html">Dojo Procedures</a></li>
+
+                    <li><a href="katas.html">Katas</a></li>
+
+                    <li><a href="events.html">Events</a></li>
+
+                    <li><a href="terminology.html">Terminology</a></li>
+
+                    <li><a href="instructors.html">Instructors</a></li>
+
+                    <li><a href="schoolsandschedules.html">Schools
+                            &amp; Schedules</a> </li>
+
+                </ul>
+
+                <p> &copy; Wado Kikai (TM) All rights reserved 2006
+                    &bull; All material on this site is copyrighted <br />
+
+                    <a href="http://validator.w3.org/check?uri=http://www.wadokikai.com/katas.html" title="Check the validity of this site&rsquo;s XHTML">XHTML</a>
+                    &rsaquo; <a href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.wadokikai.com/index.css&amp;usermedium=all" title="Check the validity of this site&rsquo;s CSS">CSS</a>
+                    &rsaquo; <a href="http://www.contentquality.com/mynewtester/cynthia.exe?Url1=http://www.wadokikai.com/katas.html" title="Check the accessibility of this site according to U.S. Section 508">508</a>
+                    validated &bull; Site designed by <a href="http://www.lotusseedsdesign.com">Lotus Seeds Design</a></p>
+
+            </div>
+
+            <!-- ends footerLink div --></div>
+
+        <!-- ends container div -->
+    </body>
+</html>

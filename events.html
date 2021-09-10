@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            Team SF
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script src="data.js"></script>
+        <style>
+            .container{
+                margin: 1%;
+            }
+            .flex_row{
+                flex-direction: row;
+                margin:5px;
+                padding:5px;
+                justify-content: flex-start;
+                border:solid;
+                flex-basis: content;
+                background-color: white;
+            }
+      
+            h1{
+                font-family: "sans-serif"
+            }
+           
+            body{
+            margin: 0%;
+      
+
+        }
+
+        div{
+            margin-bottom: 10px;
+        }
+        ul{
+            background-color: rgb(175, 175, 236);
+            overflow: hidden;
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            position: sticky;
+            position: -webkit-sticky;
+            width: 100%;
+            top:0;
+        }
+
+        li{
+            float:left;
+            
+        }
+        
+        li a{
+            display: block;
+            padding: 14px 16px;
+            color: white;
+            text-decoration:none;
+        }
+
+        .active{
+            background-color:green;
+            color: blue;
+        }
+
+        li a:hover:not(.active){
+            background-color:indianred;
+        }
+        td{
+            margin:5%;
+        }
+        </style>
+        <script>
+            function pageLoad ()
+            {
+                let c="<table><tr><th>Date</th><th>More Info</th><th>Event</th><th>Location</th><th>Contact</th></tr>";
+                GC_EVENTS.forEach(row => {
+                    let tr = `<tr><td>${row.startDate}</td><td><a href='${row.website}'>
+                    <img src='${row.image}'/></a></td><td>${row.title}</td><td>${row.location1}</td><td>${row.contact}</td></tr>`
+                    c+=tr;
+                });
+                $("#divContent").html(c+"</table>")
+            }
+        </script>
+    </head>
+    <body onload="pageLoad()">
+        <img src='images/teamsf07logo.gif'/>
+
+       
+            <ul>
+                <li><a href='./'>Home</a> </li>
+                <li><a href='aboutus.html'>About Us</a> </li>
+                <li><a href='contactus.html'>Contact Us</a></li>
+                <li><a href='signup.html'>Sign Up</a> </li>
+                <li class="active"><a href='clubs.html'>Sporting Groups</a> </li>
+                <li><a href='links.html'>Links</a> </li>
+            </ul>
+    
+        <div class='container' id='divContent'>
+            
+        </div>
+        <footer class="footer">(c) 2021 Team SF</footer>
+    </body>
+   
+    </html>
